@@ -166,7 +166,7 @@ font-family: 'Days One', sans-serif;
 .ptitle {
 	position: absolute;
 	top: 380px;
-	width: 616px;
+	width: 456px;
 	color: #5E5E5A;
 	height:33px;
 	font-family: 'Days One', sans-serif;
@@ -187,7 +187,7 @@ font-family: 'Days One', sans-serif;
 	padding-right: 8px;
 	position: absolute;
 	top: 380px;
-	width: 600px;
+	width: 440px;
 	max-height:400px;
 	overflow-y:hidden;
 	font-family: 'Open Sans', sans-serif;
@@ -335,7 +335,7 @@ font-family: 'Days One', sans-serif;
 	width:0;
 	position: absolute;
 	top: 490px;
-	left:623px;
+	left:474px;
 }
 
 #scroll-focus-queue {
@@ -350,7 +350,7 @@ font-family: 'Days One', sans-serif;
 	width:65px;
 	position: absolute;
 	top: 554px;
-	left:628px;
+	left:479px;
 }
 
 #scroll-down-queue {
@@ -366,5 +366,5 @@ font-family: 'Days One', sans-serif;
 	width:0;
 	position: absolute;
 	top: 642px;
-	left:623px;
+	left:474px;
 }
