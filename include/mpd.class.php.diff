@@ -1,0 +1,24 @@
+741,743c741,745
+<         // Check minimum compatibility
+< 		$req_ver_low = $this->COMPATIBILITY_MIN_TBL[$cmd];
+< 		$req_ver_hi = $this->COMPATIBILITY_MAX_TBL[$cmd];
+---
+>         // Check minimum compatibility
+> 		$req_ver_low = null;
+> 		$req_ver_hi = null;
+> 		if (isset($this->COMPATIBILITY_MIN_TBL[$cmd])) $req_ver_low = $this->COMPATIBILITY_MIN_TBL[$cmd];
+> 		if (isset($this->COMPATIBILITY_MAX_TBL[$cmd])) $req_ver_hi = $this->COMPATIBILITY_MAX_TBL[$cmd];
+858,861c860,863
+< 		$this->num_songs_played = $stats['songs_played'];
+< 		$this->num_artists = $stats['num_artists'];
+< 		$this->num_songs = $stats['num_songs'];
+< 		$this->num_albums = $stats['num_albums'];
+---
+> 		//$this->num_songs_played = $stats['songs_played'];
+> 		$this->num_artists = $stats['artists'];
+> 		$this->num_songs = $stats['songs'];
+> 		$this->num_albums = $stats['albums'];
+953c955
+< 		MPD_CMD_PLMOVE  	=> "0.9.1"	,
+---
+> 		//MPD_CMD_PLMOVE  	=> "0.9.1"	,
