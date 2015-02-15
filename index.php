@@ -7,12 +7,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
-
-
-<script src="include/jquery.js"></script>
-<script src="include/css.js"></script>
-<script src="include/actions.js"></script>
-
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -80,16 +75,41 @@ Volume
 		</div>
 	</a>
 </div>
-	<div class="current_song">
-	</div>
-	<div class="stitle">
+
+<div class="stitle">
 	Now Playing
-	</div>
-	<div class="playlist">
-	</div>
-	<div class="ptitle">
+</div>
+
+<div class="current_song">
+</div>
+
+<div class="playlist">
+</div>
+
+<div class="ptitle">
 	Playlist
-	</div>
+</div>
+
+<div id="scroll-up-queue">
+</div>
+<div id="scroll-focus-queue">
+</div>
+<div id="scroll-down-queue">
+</div>
 
 </body>
+
+<script src="include/jquery.js"></script>
+<script src="include/css.js"></script>
+<script src="include/actions.js"></script>
+
+<script>
+function checkIfInView(element){
+	$.get( "current_song.php?track_id=true", function( data ) {
+		var total_scroll_pixels = parseInt(data) * 44;
+		$('.playlist').animate({scrollTop: total_scroll_pixels}, 1000);
+    });
+}
+</script>
+
 </html>

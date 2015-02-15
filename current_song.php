@@ -10,6 +10,10 @@ if (!$Mpd->connected) {
 $memcache = new Memcache;
 $memcache->connect('localhost', 11211) or die ("Could not connect");
 
+if ($_GET["track_id"] == "true") {
+	echo $Mpd->current_track_id;
+	exit;
+}
 
 if (($Mpd->state == MPD_STATE_PLAYING) || ($Mpd->state == MPD_STATE_PAUSED)) {
 	$playlist = $memcache->get('mpdplaylist');

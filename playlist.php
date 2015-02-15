@@ -33,6 +33,8 @@ if (!$memcache->get('mpdplaylist')) {
 $m_uplist = 200;
 $m_downlist = $m_uplist * 2;
 
+//temp Hack To load all songs and not just batches of 400s
+$m_downlist = count($Mpd->playlist);
 
 if (count($Mpd->playlist) < $m_downlist) { 
 	$m_downlist = count($Mpd->playlist) - 1;
@@ -105,8 +107,11 @@ $memcache->set('mpdplaylistcount',$mpdlistcount, false, 40) or die ("Failed to s
 $playlist_results = $memcache->get('mpdplaylist');
 
 
-$uplist = 2	;
+$uplist = 2;
 $downlist = 8;
+//temp Hack To load all songs and not just batches of 400s
+$uplist = count($playlist_results);
+$downlist = count($playlist_results);
 
 if (count($playlist_results) < $downlist) { 
 	$downlist = count($playlist_results) - 1;
